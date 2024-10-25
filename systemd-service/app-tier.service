@@ -1,0 +1,13 @@
+[Unit]
+Description=App Tier Script for Processing SQS Messages in Virtual Environment
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/
+ExecStart=/bin/bash -c 'source /home/ubuntu/myenv/bin/activate && python /home/ubuntu/script.py'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
