@@ -1,0 +1,11 @@
+[Unit]
+Description=Python Script to Fetch Queue Messages and Create AMIs (with Virtual Environment)
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/autoscale
+ExecStart=/bin/bash -c 'source /home/ubuntu/autoscale/myenv/bin/activate && python /home/ubuntu/autoscale/controller.py'
+
+[Install]
+WantedBy=multi-user.target
